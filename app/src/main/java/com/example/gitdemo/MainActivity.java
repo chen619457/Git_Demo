@@ -2,7 +2,7 @@ package com.example.gitdemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.gitdemo.databinding.ActivityMainBinding;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,14 +18,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextView;
     private int number=0;
     private static final String save_number="SAVE_NUMBER";
-
+    private ActivityMainBinding mBinding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mBinding=ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
 
-        setContentView(R.layout.activity_main);
         mButtonAdd=findViewById(R.id.button_add);
         mButtonSub=findViewById(R.id.button_sub);
         mTextView=findViewById(R.id.text_view);
